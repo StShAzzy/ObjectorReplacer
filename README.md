@@ -8,3 +8,8 @@ Replaces someone's Conscientious Objector, can be used for banning in case of ns
 
 # Info
 for the time being only contains PT-BR lines, i'll do a translation down the year
+
+# Requires
+TF2 Econ Data
+TF2 Items
+More Colors (Compile Only)
