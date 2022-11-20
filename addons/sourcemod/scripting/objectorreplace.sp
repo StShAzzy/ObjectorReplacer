@@ -1,4 +1,4 @@
-	#include <sourcemod>
+#include <sourcemod>
 #include <tf2_stocks>
 #include <tf_econ_data>
 #include <tf2items>
@@ -9,7 +9,7 @@
 #pragma semicolon 1
 #pragma newdecls optional
 
-#define PLUGIN_VERSION "1.5.5"
+#define PLUGIN_VERSION "1.5.6"
 
 public Plugin myinfo = 
 {
@@ -72,7 +72,7 @@ public Action Command_replacenow(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default}  Este comando requer um alvo válido");
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} Este comando requer um alvo válido");
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH]; // codigo de adicionar players a uma array
@@ -82,7 +82,7 @@ public Action Command_replacenow(int client, int args)
 	int targetList[MAXPLAYERS];
 	bool tnIsMl;
 	int targetCount = ProcessTargetString(targetArg, client, targetList, MAXPLAYERS,
-	COMMAND_FILTER_CONNECTED, targetName, sizeof(targetName), tnIsMl);
+	COMMAND_FILTER_ALIVE, targetName, sizeof(targetName), tnIsMl);
 
 	if(targetCount <= 0) {
 		ReplyToTargetError(client, targetCount);
@@ -91,7 +91,7 @@ public Action Command_replacenow(int client, int args)
 
 	for(int i = 0; i < targetCount; i++) { //função q itera entre os players na lista
 	int targetClient = targetList[i];
-	int rnd = GetRandomInt(1, 11);
+	int rnd = GetRandomInt(0, 10);
 	TF2_RemoveWeaponSlot(targetClient, 2);
 	if(rndw[rnd] == 1071)
 	{
@@ -294,9 +294,16 @@ public void Event_InventoryApplication(Event event, const char[] name, bool dont
 		if(IsValidEntity(weapon))	{
 			int defindex = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
 			if(defindex == 474)	{
-					int rnd = GetRandomInt(0, 12);
+					int rnd = GetRandomInt(0, 10);
 					TF2_RemoveWeaponSlot(client, 2);
-					TF2Items_GiveWeapon(client, "saxxy", rndw[rnd], 69, 8, "");
+					if(rndw[rnd] == 1071)
+					{
+						TF2Items_GiveWeapon(targetClient, "saxxy", 1071, 69, 8, "150 ; 1 ; 542 ; 0");
+					}
+					else
+					{
+						TF2Items_GiveWeapon(targetClient, "saxxy", rndw[rnd], 69, 8, "");
+					}
 				} 
 		}
 	}
