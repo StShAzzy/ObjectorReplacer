@@ -298,11 +298,11 @@ public void Event_InventoryApplication(Event event, const char[] name, bool dont
 					TF2_RemoveWeaponSlot(client, 2);
 					if(rndw[rnd] == 1071)
 					{
-						TF2Items_GiveWeapon(targetClient, "saxxy", 1071, 69, 8, "150 ; 1 ; 542 ; 0");
+						TF2Items_GiveWeapon(client, "saxxy", 1071, 69, 8, "150 ; 1 ; 542 ; 0");
 					}
 					else
 					{
-						TF2Items_GiveWeapon(targetClient, "saxxy", rndw[rnd], 69, 8, "");
+						TF2Items_GiveWeapon(client, "saxxy", rndw[rnd], 69, 8, "");
 					}
 				} 
 		}
