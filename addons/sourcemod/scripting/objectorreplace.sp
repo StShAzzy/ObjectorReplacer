@@ -197,28 +197,13 @@ public Action Command_ObjectorBan(int client, int args)
 			SetClientCookie(targetClient, ObjReplacer_cookie, "0");
 		}
 		
-
-		if(g_bReplaceObj[targetClient])
+		if(tnIsMl)
 		{
-			if(tnIsMl) 
-			{
-				CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de Placa para %t ativado", targetName);
-			} 
-			else 
-			{
-				CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de Placa para %s ativado", targetName);
-			}
-		}
-		if(!g_bReplaceObj[targetClient])
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %t", targetName);
+		} 
+		else 
 		{
-			if(tnIsMl) 
-			{
-				CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de Placa para %t desativado", targetName);
-			} 
-			else 
-			{
-				CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de Placa para %s desativado", targetName);    
-			}
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %s", targetName);    
 		}
 	}
 	return Plugin_Handled;
