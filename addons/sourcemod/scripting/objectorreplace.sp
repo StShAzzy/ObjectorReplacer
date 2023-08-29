@@ -165,7 +165,7 @@ public Action Command_ObjectorBan(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default}  Este comando requer um alvo válido");
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} Este comando requer um alvo válido");
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH];
