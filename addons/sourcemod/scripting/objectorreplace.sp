@@ -6,6 +6,8 @@
 #include <morecolors>
 //#define DEBUG
 
+// FIXME = Implementar forma correta de implementar tradução pra essas mensagens.
+
 #pragma semicolon 1
 #pragma newdecls optional
 
@@ -105,11 +107,11 @@ public Action Command_replacenow(int client, int args)
 	}
 	if(tnIsMl) //texto que será exibido no chat
 	{
-		CPrintToChatAll("{unique}[O{darkblue}R]{default} Arma de %t substituida", targetName);
+		CPrintToChatAll("{unique}[O{darkblue}R]{default} Arma de %t substituida", targetName); // FIXME
 	} 
 	else 
 	{
-		CPrintToChatAll("{unique}[O{darkblue}R]{default} Arma de %s substituida", targetName);    
+		CPrintToChatAll("{unique}[O{darkblue}R]{default} Arma de %s substituida", targetName); // FIXME
 	}
 	return Plugin_Handled;
 }
@@ -200,11 +202,11 @@ public Action Command_ObjectorBan(int client, int args)
 		
 		if(tnIsMl)
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %t", targetName);
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %t", targetName); // FIXME
 		} 
 		else 
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %s", targetName);    
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %s", targetName); // FIXME 
 		}
 	}
 	return Plugin_Handled;
@@ -259,11 +261,11 @@ public Action Command_replacealways(int client, int args)
 	}
 	if(tnIsMl) //texto que será exibido no chat
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Substituição de placa alterada para %t", targetName);
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Substituição de placa alterada para %t", targetName); // FIXME
 		} 
 		else 
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Substituição de placa alterada para %s", targetName);    
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Substituição de placa alterada para %s", targetName); // FIXME
 		}
 	return Plugin_Handled;
 }
