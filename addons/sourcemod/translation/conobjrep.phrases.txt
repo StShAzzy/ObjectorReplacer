@@ -1,0 +1,17 @@
+"Phrases"
+{
+	"NoTarget"
+	{
+		"pt"	"Este comando requer um alvo, {darkred}burro{default}."
+		"pt_p"	"Este comando requer um alvo, {darkred}burro{default}."
+		"en"	"This command requires a target, {darkred}idiot{default}."
+		"es"	"Este comando requiere un objetivo, {darkred}idiota{default}."
+	}
+	"InvalidTarget"
+	{
+		"pt"	"Este comando requer um alvo válido, {darkred}burro{default}."
+		"pt_p"	"Este comando requer um alvo válido, {darkred}burro{default}."
+		"en"	"This command requires a valid target, {darkred}idiot{default}."
+		"es"	"Este comando requiere un objetivo válido, {darkred}idiota{default}."
+	}
+}

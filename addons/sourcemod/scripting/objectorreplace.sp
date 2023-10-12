@@ -45,6 +45,7 @@ public void OnPluginStart()
 	HookEvent("post_inventory_application", Event_InventoryApplication);
 	ObjReplacer_cookie = RegClientCookie("ObjReplacer_cookie", "Should the Plugin Replace objector? 1=yes 0=no", CookieAccess_Protected);
 	LoadTranslations("common.phrases");
+	LoadTranslations("conobjrep.phrases");
 	
 	for (int client = 1; client <= MaxClients; client++)
 	{
@@ -72,7 +73,7 @@ public Action Command_replacenow(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} Este comando requer um alvo válido");
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", NoTarget, client);
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH]; // codigo de adicionar players a uma array
@@ -165,7 +166,7 @@ public Action Command_ObjectorBan(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} Este comando requer um alvo válido");
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", InvalidTarget);
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH];
@@ -213,7 +214,7 @@ public Action Command_replacealways(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default}  Este comando requer um alvo válido");
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", InvalidTarget);
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH]; // codigo de adicionar players a uma array	
@@ -273,7 +274,7 @@ public void Event_InventoryApplication(Event event, const char[] name, bool dont
 	if (g_bReplaceObj[client])
     {	
 		#if defined DEBUG
-		PrintToChatAll("arma deveria ter sido substituida agora");
+		PrintToChatAll("[DEBUG]: Arma deveria ter sido substituida agora");
 		#endif
 		int weapon = GetPlayerWeaponSlot(client, 2);
 		if(IsValidEntity(weapon))	{
