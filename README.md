@@ -7,7 +7,8 @@ Replaces someone's Conscientious Objector, can be used for banning in case of ns
 ### sm_objectorban <target> // bans a specific user from ever using their sign again, can only be toggled
 
 # Info
-for the time being only contains PT-BR lines, i'll do a translation down the year
+These are only toggles, you can edit them directly using the client preferences plugin
+Additional languages for the plugin would be pretty useful
 
 # Requires
 TF2 Econ Data
