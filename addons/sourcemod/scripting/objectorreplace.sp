@@ -75,7 +75,7 @@ public Action Command_replacenow(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", NoTarget, client);
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", "NoTarget");
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH]; // codigo de adicionar players a uma array
@@ -168,7 +168,7 @@ public Action Command_ObjectorBan(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", InvalidTarget);
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", "InvalidTarget");
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH];
@@ -202,11 +202,11 @@ public Action Command_ObjectorBan(int client, int args)
 		
 		if(tnIsMl)
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %t", targetName); // FIXME
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %t", targetName); // FIXME?
 		} 
 		else 
 		{
-			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %s", targetName); // FIXME 
+			CPrintToChatAll("{unique}[O{darkblue}R]{default} Banimento de placa alterada para %s", targetName); // FIXME?
 		}
 	}
 	return Plugin_Handled;
@@ -216,7 +216,7 @@ public Action Command_replacealways(int client, int args)
 {
 	if(args == 0)
 	{
-		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", InvalidTarget);
+		CReplyToCommand(client, "{unique}[O{darkblue}R]{default} %T", "InvalidTarget");
 		return Plugin_Handled;
 	}
 	char targetArg[MAX_TARGET_LENGTH]; // codigo de adicionar players a uma array	
