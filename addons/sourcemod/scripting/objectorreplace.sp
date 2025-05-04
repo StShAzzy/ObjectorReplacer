@@ -45,7 +45,7 @@ public void OnPluginStart()
 	RegAdminCmd("sm_replacealways", Command_replacealways, ADMFLAG_GENERIC, "Ativa substituição ate a proxíma vez que o jogador se conectar");
 	RegAdminCmd("sm_objectorban", Command_ObjectorBan, ADMFLAG_GENERIC, "Bane o jogador de utilizar placas com imagens");
 	HookEvent("post_inventory_application", Event_InventoryApplication);
-	ObjReplacer_cookie = RegClientCookie("ObjReplacer_cookie", "Should the Plugin Replace objector? 1=yes 0=no", CookieAccess_Protected);
+	ObjReplacer_cookie = RegClientCookie("ObjReplacer_cookie", "Should the Plugin Replace objector? 0 != yes 0 == no", CookieAccess_Protected);
 	LoadTranslations("common.phrases");
 	LoadTranslations("conobjrep.phrases");
 	
